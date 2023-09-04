@@ -1,4 +1,4 @@
-import { START_BTN_MARKUP, PAUSE_BTN_MARKUP, RESET_BTN_MARKUP } from './CustomTimer.constants.mjs';
+import { START_BTN_MARKUP, PAUSE_BTN_MARKUP, RESET_BTN_MARKUP, TIMER_MARKUP, TIMER_STYLES } from './CustomTimer.constants.mjs';
 
 class CustomTimer extends HTMLElement {
   constructor() {
@@ -115,25 +115,7 @@ class CustomTimer extends HTMLElement {
 
   _initShadowDOM() {
     this._shadow = this.attachShadow({ mode: 'closed' });
-    this._shadow.innerHTML = `
-    <style>
-      .timer__display {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 22.5rem;
-        height: 22.5rem;
-        border-radius: 50%;
-        background-color: var(--base-weak);
-        box-shadow: var(--default-shadow);
-        margin: 2.5rem 0 1.75rem 0;
-        grid-area: timer;
-
-        font-weight: 700;
-        font-size: 3.2rem;
-      }
-    </style>
-    <div class="timer__display"></div>`;
+    this._shadow.innerHTML = TIMER_STYLES + TIMER_MARKUP;
     this._timerDisplay = this._shadow.querySelector('.timer__display');
   }
 
