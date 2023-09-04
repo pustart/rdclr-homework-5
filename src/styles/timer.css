@@ -1,0 +1,31 @@
+.timer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2rem;
+  gap: 0px 1.25rem;
+  justify-items: center;
+  grid-template-areas:
+    "timer timer timer"
+    "start pause reset";
+}
+
+.timer__value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22.5rem;
+  height: 22.5rem;
+  border-radius: 50%;
+  background: var(--base-weak);
+  box-shadow: var(--default-shadow);
+}
+
+.timer__start-btn {
+  background: var(--base-strong);
+  color: var(--base-weak);
+}
+
+.timer__start-btn:hover {
+  background: var(--accent-strong);
+  color: var(--base-weak);
+}
